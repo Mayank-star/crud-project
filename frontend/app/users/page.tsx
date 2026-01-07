@@ -14,7 +14,7 @@ export default function UsersPage() {
 
   const loadUsers = useCallback(async () => {
     const res = await api.get("/users");
-    setUsers(res.data);
+    setUsers(res?.data?.data);
   }, []);
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function UsersPage() {
       <UserForm onSubmit={addUser} />
 
       <ul className="space-y-2">
-        {users.map((u) => (
+        {users?.map((u) => (
           <li
             key={u.id}
             className="flex justify-between items-center border p-2 rounded"

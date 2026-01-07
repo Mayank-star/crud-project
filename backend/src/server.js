@@ -11,6 +11,6 @@ dotenv.config({
 import app from "./app.js";
 
 app.listen(process.env.PORT, () => {
-  console.log("DB USER:", process.env.DB_USER);
+  // console.log("DB USER:", process.env.DB_USER);
   console.log(`Server running on port ${process.env.PORT}`);
 });
